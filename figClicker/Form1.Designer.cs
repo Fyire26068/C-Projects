@@ -101,9 +101,9 @@
             this.autoClickerLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.autoClickerLbl.Location = new System.Drawing.Point(429, 38);
             this.autoClickerLbl.Name = "autoClickerLbl";
-            this.autoClickerLbl.Size = new System.Drawing.Size(98, 17);
+            this.autoClickerLbl.Size = new System.Drawing.Size(108, 17);
             this.autoClickerLbl.TabIndex = 7;
-            this.autoClickerLbl.Text = "AutoClickers : ";
+            this.autoClickerLbl.Text = "Click Upgrade : ";
             this.autoClickerLbl.Visible = false;
             // 
             // autoClickerBuyBttn
@@ -120,6 +120,11 @@
             // autoClickerSpin
             // 
             this.autoClickerSpin.Location = new System.Drawing.Point(664, 35);
+            this.autoClickerSpin.Maximum = new decimal(new int[] {
+            999,
+            0,
+            0,
+            0});
             this.autoClickerSpin.Name = "autoClickerSpin";
             this.autoClickerSpin.ReadOnly = true;
             this.autoClickerSpin.Size = new System.Drawing.Size(120, 20);

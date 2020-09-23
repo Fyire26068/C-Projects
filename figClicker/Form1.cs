@@ -25,7 +25,7 @@ namespace Fig_Clicker
 
         private void figClickerBttn_Click(object sender, EventArgs e)//fig newton button click main
         {
-            figAmountSpin.Value = figAmountSpin.Value + 1;
+            figAmountSpin.Value = figAmountSpin.Value + 1 + autoClickerSpin.Value;
             unlock1PrBar.Value = unlock1PrBar.Value + 1;
             if (unlock1PrBar.Value == 100)//checking if fig newton has been clicked 100 times
             {
@@ -49,19 +49,14 @@ namespace Fig_Clicker
 
         private void autoClickerBuyBttn_Click(object sender, EventArgs e)//auto clicker buy function
         {
-            autoClickerSpin.Value = autoClickerSpin.Value + 1;//auto clicker amount
-            figAmountSpin.Value = figAmountSpin.Value - 100;
-            System.Threading.Thread.Sleep(1000);
-            if(autoClickerSpin.Value >= 1){//trying to get the autoclicker to add to fig amount
-                do
-                {
-                    System.Threading.Thread.Sleep(1000);
-                    figAmountSpin.Value = figAmountSpin.Value + autoClickerSpin.Value;
-                    break;
-                } while (autoClickerSpin.Value >= 1);
-            };
+            if (figAmountSpin.Value >= 100)
+            {
+                figAmountSpin.Value = figAmountSpin.Value - 100;
+                autoClickerSpin.Value = autoClickerSpin.Value + 1;//auto clicker amount
+            }
+            else;
             
-
+       
         }
         
     }
