@@ -12,13 +12,17 @@ using System.Windows.Forms;
 namespace Fig_Clicker
 {
    
-    public partial class Form1 : Form
+    public partial class FigClicker : Form
     {
         int figNewtons;
-        public Form1()
+        public FigClicker()
         {
             InitializeComponent();
-
+            if(autoClickerSpin.Value >= 1)
+            {
+                figAmountSpin.Value = figAmountSpin.Value + autoClickerSpin.Value;
+                Thread.Sleep(1000);
+            };
         }
 
 
@@ -38,7 +42,10 @@ namespace Fig_Clicker
             if (unlock1PrBar.Visible == false)
             {
                 unlock1PrBar.Value = 0;//making progress bar 1 useless
-            }
+            };
+            BackColor = Color.Green;
+            //Thread.Sleep(100);
+            BackColor = Color.White;
 
         }
 
@@ -53,11 +60,16 @@ namespace Fig_Clicker
             {
                 figAmountSpin.Value = figAmountSpin.Value - 100;
                 autoClickerSpin.Value = autoClickerSpin.Value + 1;//auto clicker amount
+            
             }
             else;
             
        
         }
-        
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Fig_Clicker
 {
-    partial class Form1
+    partial class FigClicker
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FigClicker));
             this.figAmountSpin = new System.Windows.Forms.NumericUpDown();
             this.figClickerBttn = new System.Windows.Forms.Button();
             this.figAmountLbl = new System.Windows.Forms.Label();
@@ -47,7 +47,7 @@
             // 
             this.figAmountSpin.Location = new System.Drawing.Point(61, 195);
             this.figAmountSpin.Maximum = new decimal(new int[] {
-            999999,
+            999999999,
             0,
             0,
             0});
@@ -151,7 +151,7 @@
             this.hideLbl.Text = "   ";
             this.hideLbl.Visible = false;
             // 
-            // Form1
+            // FigClicker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -166,8 +166,9 @@
             this.Controls.Add(this.figAmountSpin);
             this.Controls.Add(this.figAmountLbl);
             this.Controls.Add(this.figClickerBttn);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "FigClicker";
+            this.Text = "Fig Clicker";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.figAmountSpin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.autoClickerSpin)).EndInit();
             this.ResumeLayout(false);
