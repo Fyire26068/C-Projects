@@ -9,27 +9,26 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Fig_Clicker
 {
    
     public partial class FigClicker : Form
     {
         int figNewtons;
+        float autoClickers;
         public FigClicker()
         {
             InitializeComponent();
-            if(autoClickerSpin.Value >= 1)
-            {
-                figAmountSpin.Value = figAmountSpin.Value + autoClickerSpin.Value;
-                Thread.Sleep(1000);
-            };
+            
+
         }
 
 
 
         private void figClickerBttn_Click(object sender, EventArgs e)//fig newton button click main
         {
-            figAmountSpin.Value = figAmountSpin.Value + 1 + autoClickerSpin.Value;
+            figAmountSpin.Value = figAmountSpin.Value + 1;
             unlock1PrBar.Value = unlock1PrBar.Value + 1;
             if (unlock1PrBar.Value == 100)//checking if fig newton has been clicked 100 times
             {
@@ -60,16 +59,35 @@ namespace Fig_Clicker
             {
                 figAmountSpin.Value = figAmountSpin.Value - 100;
                 autoClickerSpin.Value = autoClickerSpin.Value + 1;//auto clicker amount
-            
+                autoClickerSpin.Value = autoClickers;
+
             }
             else;
-            
-       
+
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
 
         }
+    }
+
+    public class AutoClicker
+    {
+        public void autoClicker()
+        {
+            float figNewtons;
+            float autoClickers = FigClicker.autoClickerSpin.Value;
+            
+            
+            if (autoClickerSpin >= 1)
+            {
+                figNewtons = figNewtons + autoClickerSpin;
+                Thread.Sleep(1000);
+            };
+        }
+
+        
     }
 }
