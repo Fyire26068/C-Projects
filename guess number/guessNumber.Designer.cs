@@ -33,9 +33,15 @@
             this.highLbl = new System.Windows.Forms.Label();
             this.lowerLbl = new System.Windows.Forms.Label();
             this.winLbl = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.lossLbl = new System.Windows.Forms.Label();
             this.theNumLbl = new System.Windows.Forms.Label();
+            this.guessLbl = new System.Windows.Forms.Label();
+            this.guessAmLbl = new System.Windows.Forms.Label();
+            this.easyRB = new System.Windows.Forms.RadioButton();
+            this.mediumRB = new System.Windows.Forms.RadioButton();
+            this.hardRB = new System.Windows.Forms.RadioButton();
+            this.promptLbl = new System.Windows.Forms.Label();
+            this.pNumberLbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.guessSpn)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,16 +61,11 @@
             // 
             this.guessSpn.Font = new System.Drawing.Font("Impact", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guessSpn.Location = new System.Drawing.Point(412, 195);
-            this.guessSpn.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
             this.guessSpn.Name = "guessSpn";
             this.guessSpn.Size = new System.Drawing.Size(115, 86);
             this.guessSpn.TabIndex = 1;
             this.guessSpn.Value = new decimal(new int[] {
-            10,
+            1,
             0,
             0,
             0});
@@ -104,15 +105,6 @@
             this.winLbl.Text = "You guessed the Number!";
             this.winLbl.Visible = false;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "label1";
-            // 
             // lossLbl
             // 
             this.lossLbl.AutoSize = true;
@@ -136,14 +128,99 @@
             this.theNumLbl.Visible = false;
             this.theNumLbl.Click += new System.EventHandler(this.label2_Click);
             // 
+            // guessLbl
+            // 
+            this.guessLbl.AutoSize = true;
+            this.guessLbl.Font = new System.Drawing.Font("Century", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guessLbl.Location = new System.Drawing.Point(490, 355);
+            this.guessLbl.Name = "guessLbl";
+            this.guessLbl.Size = new System.Drawing.Size(126, 28);
+            this.guessLbl.TabIndex = 8;
+            this.guessLbl.Text = "Guesses: ";
+            this.guessLbl.Click += new System.EventHandler(this.label2_Click_1);
+            // 
+            // guessAmLbl
+            // 
+            this.guessAmLbl.AutoSize = true;
+            this.guessAmLbl.Font = new System.Drawing.Font("Impact", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guessAmLbl.Location = new System.Drawing.Point(611, 346);
+            this.guessAmLbl.Name = "guessAmLbl";
+            this.guessAmLbl.Size = new System.Drawing.Size(34, 39);
+            this.guessAmLbl.TabIndex = 9;
+            this.guessAmLbl.Text = "3";
+            // 
+            // easyRB
+            // 
+            this.easyRB.AutoSize = true;
+            this.easyRB.Checked = true;
+            this.easyRB.Location = new System.Drawing.Point(688, 12);
+            this.easyRB.Name = "easyRB";
+            this.easyRB.Size = new System.Drawing.Size(48, 17);
+            this.easyRB.TabIndex = 10;
+            this.easyRB.TabStop = true;
+            this.easyRB.Text = "Easy";
+            this.easyRB.UseVisualStyleBackColor = true;
+            this.easyRB.CheckedChanged += new System.EventHandler(this.easyRB_CheckedChanged);
+            // 
+            // mediumRB
+            // 
+            this.mediumRB.AutoSize = true;
+            this.mediumRB.Location = new System.Drawing.Point(688, 36);
+            this.mediumRB.Name = "mediumRB";
+            this.mediumRB.Size = new System.Drawing.Size(62, 17);
+            this.mediumRB.TabIndex = 11;
+            this.mediumRB.TabStop = true;
+            this.mediumRB.Text = "Medium";
+            this.mediumRB.UseVisualStyleBackColor = true;
+            this.mediumRB.CheckedChanged += new System.EventHandler(this.mediumRB_CheckedChanged);
+            // 
+            // hardRB
+            // 
+            this.hardRB.AutoSize = true;
+            this.hardRB.Location = new System.Drawing.Point(688, 60);
+            this.hardRB.Name = "hardRB";
+            this.hardRB.Size = new System.Drawing.Size(48, 17);
+            this.hardRB.TabIndex = 12;
+            this.hardRB.TabStop = true;
+            this.hardRB.Text = "Hard";
+            this.hardRB.UseVisualStyleBackColor = true;
+            this.hardRB.CheckedChanged += new System.EventHandler(this.hardRB_CheckedChanged);
+            // 
+            // promptLbl
+            // 
+            this.promptLbl.AutoSize = true;
+            this.promptLbl.Font = new System.Drawing.Font("Century", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.promptLbl.Location = new System.Drawing.Point(174, 301);
+            this.promptLbl.Name = "promptLbl";
+            this.promptLbl.Size = new System.Drawing.Size(353, 25);
+            this.promptLbl.TabIndex = 13;
+            this.promptLbl.Text = "I\'m thinking of a number between:";
+            this.promptLbl.Click += new System.EventHandler(this.label2_Click_2);
+            // 
+            // pNumberLbl
+            // 
+            this.pNumberLbl.AutoSize = true;
+            this.pNumberLbl.Font = new System.Drawing.Font("Century", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pNumberLbl.Location = new System.Drawing.Point(544, 301);
+            this.pNumberLbl.Name = "pNumberLbl";
+            this.pNumberLbl.Size = new System.Drawing.Size(73, 25);
+            this.pNumberLbl.TabIndex = 14;
+            this.pNumberLbl.Text = "1 - 10";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pNumberLbl);
+            this.Controls.Add(this.promptLbl);
+            this.Controls.Add(this.hardRB);
+            this.Controls.Add(this.mediumRB);
+            this.Controls.Add(this.easyRB);
+            this.Controls.Add(this.guessAmLbl);
+            this.Controls.Add(this.guessLbl);
             this.Controls.Add(this.theNumLbl);
             this.Controls.Add(this.lossLbl);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.winLbl);
             this.Controls.Add(this.lowerLbl);
             this.Controls.Add(this.highLbl);
@@ -151,6 +228,7 @@
             this.Controls.Add(this.guessBttn);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.guessSpn)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -164,9 +242,15 @@
         private System.Windows.Forms.Label highLbl;
         private System.Windows.Forms.Label lowerLbl;
         private System.Windows.Forms.Label winLbl;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lossLbl;
         private System.Windows.Forms.Label theNumLbl;
+        private System.Windows.Forms.Label guessLbl;
+        private System.Windows.Forms.Label guessAmLbl;
+        private System.Windows.Forms.RadioButton easyRB;
+        private System.Windows.Forms.RadioButton mediumRB;
+        private System.Windows.Forms.RadioButton hardRB;
+        private System.Windows.Forms.Label promptLbl;
+        private System.Windows.Forms.Label pNumberLbl;
     }
 }
 
